@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QR Generator</string>
+    <string name="tab_create">Создать</string>
+    <string name="tab_scanner">Сканер</string>
+    <string name="tab_history">История</string>
+    <string name="generate_button">Сгенерировать QR-код</string>
+    <string name="save_button">Сохранить</string>
+    <string name="share_button">Поделиться</string>
+    <string name="copy_button">Копировать</string>
+    <string name="favorite_button">Избранное</string>
+    <string name="delete_all">Очистить историю</string>
+    <string name="empty_history">История пуста</string>
+    <string name="camera_permission_needed">Для сканирования необходимо разрешение камеры</string>
+    <string name="saved_to_gallery">QR-код сохранён в галерею</string>
+    <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
+</resources>

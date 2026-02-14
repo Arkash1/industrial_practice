@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.qrgen.app.ui.home.HomeFragment"
+        android:label="QR Generator">
+        <action android:id="@+id/action_home_to_createText"
+            app:destination="@id/createTextFragment" />
+        <action android:id="@+id/action_home_to_createUrl"
+            app:destination="@id/createUrlFragment" />
+        <action android:id="@+id/action_home_to_createWifi"
+            app:destination="@id/createWifiFragment" />
+        <action android:id="@+id/action_home_to_createContact"
+            app:destination="@id/createContactFragment" />
+        <action android:id="@+id/action_home_to_createEmail"
+            app:destination="@id/createEmailFragment" />
+        <action android:id="@+id/action_home_to_createPhone"
+            app:destination="@id/createPhoneFragment" />
+        <action android:id="@+id/action_home_to_createSms"
+            app:destination="@id/createSmsFragment" />
+        <action android:id="@+id/action_home_to_createGeo"
+            app:destination="@id/createGeoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createTextFragment"
+        android:name="com.qrgen.app.ui.create.CreateTextFragment"
+        android:label="Текст">
+        <action android:id="@+id/action_createText_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createUrlFragment"
+        android:name="com.qrgen.app.ui.create.CreateUrlFragment"
+        android:label="URL">
+        <action android:id="@+id/action_createUrl_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createWifiFragment"
+        android:name="com.qrgen.app.ui.create.CreateWifiFragment"
+        android:label="Wi-Fi">
+        <action android:id="@+id/action_createWifi_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createContactFragment"
+        android:name="com.qrgen.app.ui.create.CreateContactFragment"
+        android:label="Контакт">
+        <action android:id="@+id/action_createContact_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createEmailFragment"
+        android:name="com.qrgen.app.ui.create.CreateEmailFragment"
+        android:label="Email">
+        <action android:id="@+id/action_createEmail_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createPhoneFragment"
+        android:name="com.qrgen.app.ui.create.CreatePhoneFragment"
+        android:label="Телефон">
+        <action android:id="@+id/action_createPhone_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createSmsFragment"
+        android:name="com.qrgen.app.ui.create.CreateSmsFragment"
+        android:label="SMS">
+        <action android:id="@+id/action_createSms_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createGeoFragment"
+        android:name="com.qrgen.app.ui.create.CreateGeoFragment"
+        android:label="Геолокация">
+        <action android:id="@+id/action_createGeo_to_result"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.qrgen.app.ui.result.ResultFragment"
+        android:label="Результат">
+        <argument android:name="content" app:argType="string" />
+        <argument android:name="type" app:argType="string" />
+        <argument android:name="fgColor" app:argType="integer" android:defaultValue="-16777216" />
+        <argument android:name="bgColor" app:argType="integer" android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/scannerFragment"
+        android:name="com.qrgen.app.ui.scanner.ScannerFragment"
+        android:label="Сканер" />
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.qrgen.app.ui.history.HistoryFragment"
+        android:label="История">
+        <action android:id="@+id/action_history_to_historyDetail"
+            app:destination="@id/historyDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyDetailFragment"
+        android:name="com.qrgen.app.ui.history.HistoryDetailFragment"
+        android:label="Детали">
+        <argument android:name="entityId" app:argType="long" />
+        <argument android:name="content" app:argType="string" />
+        <argument android:name="type" app:argType="string" />
+        <argument android:name="fgColor" app:argType="integer" android:defaultValue="-16777216" />
+        <argument android:name="bgColor" app:argType="integer" android:defaultValue="-1" />
+    </fragment>
+
+</navigation>

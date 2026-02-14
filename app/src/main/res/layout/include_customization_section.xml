@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="24dp">
+
+    <!-- Заголовок секции (раскрывающийся) -->
+    <LinearLayout
+        android:id="@+id/headerCustomization"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Настройки вида"
+            android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+        <ImageView
+            android:id="@+id/iconExpand"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_expand_more"
+            android:contentDescription="Развернуть"
+            android:rotation="0" />
+    </LinearLayout>
+
+    <!-- Содержимое секции (скрыто по умолчанию) -->
+    <LinearLayout
+        android:id="@+id/layoutCustomization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:paddingTop="8dp">
+
+        <!-- Цвет QR-кода -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Цвет QR-кода:"
+                android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+            <View
+                android:id="@+id/viewForegroundColor"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="#000000" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonForegroundColor"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Изменить"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- Цвет фона -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Цвет фона:"
+                android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+            <View
+                android:id="@+id/viewBackgroundColor"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="#FFFFFF" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBackgroundColor"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Изменить"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

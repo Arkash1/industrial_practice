@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Поле ввода текста -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutContent"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите текст"
+            app:counterEnabled="true"
+            app:counterMaxLength="4296">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:minLines="4"
+                android:gravity="top" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Счётчик символов -->
+        <TextView
+            android:id="@+id/textCharCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0/4296 симв."
+            android:textAlignment="textEnd"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            android:alpha="0.6"
+            android:layout_marginTop="4dp" />
+
+        <!-- Секция кастомизации — заголовок -->
+        <LinearLayout
+            android:id="@+id/headerCustomization"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginTop="24dp"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Настройки вида"
+                android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+            <ImageView
+                android:id="@+id/iconExpand"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_expand_more"
+                android:contentDescription="Развернуть"
+                android:rotation="0" />
+        </LinearLayout>
+
+        <!-- Секция кастомизации — содержимое -->
+        <LinearLayout
+            android:id="@+id/layoutCustomization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <!-- Цвет QR-кода -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Цвет QR-кода:"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <View
+                    android:id="@+id/viewForegroundColor"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#000000" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonForegroundColor"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Изменить"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <!-- Цвет фона -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Цвет фона:"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <View
+                    android:id="@+id/viewBackgroundColor"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#FFFFFF" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonBackgroundColor"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Изменить"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Прогресс -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+        <!-- Кнопка генерации -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonGenerate"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Сгенерировать QR-код"
+            app:icon="@drawable/ic_qr_code" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- SSID -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutSsid"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Имя сети (SSID)"
+            android:layout_marginBottom="12dp"
+            app:startIconDrawable="@drawable/ic_wifi">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextSsid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Тип шифрования -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Тип шифрования:"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupEncryption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioWpa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WPA/WPA2"
+                android:checked="true" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioWep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEP"
+                android:layout_marginStart="16dp" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radioNone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Нет"
+                android:layout_marginStart="16dp" />
+        </RadioGroup>
+
+        <!-- Пароль -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputLayoutPassword"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Пароль"
+            android:layout_marginBottom="12dp"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Скрытая сеть -->
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkboxHidden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Скрытая сеть"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Секция кастомизации — заголовок -->
+        <LinearLayout
+            android:id="@+id/headerCustomization"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Настройки вида"
+                android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+            <ImageView
+                android:id="@+id/iconExpand"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_expand_more"
+                android:contentDescription="Развернуть" />
+        </LinearLayout>
+
+        <!-- Секция кастомизации — содержимое -->
+        <LinearLayout
+            android:id="@+id/layoutCustomization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Цвет QR-кода:" />
+
+                <View
+                    android:id="@+id/viewForegroundColor"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#000000" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonForegroundColor"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Изменить"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Цвет фона:" />
+
+                <View
+                    android:id="@+id/viewBackgroundColor"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="#FFFFFF" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonBackgroundColor"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Изменить"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Прогресс -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+        <!-- Кнопка генерации -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonGenerate"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Сгенерировать QR-код"
+            app:icon="@drawable/ic_qr_code" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Предпросмотр выбранного цвета -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <View
+            android:id="@+id/previewColor"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/textHexColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="#000000"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:fontFamily="monospace" />
+    </LinearLayout>
+
+    <!-- Палитра цветов -->
+    <GridLayout
+        android:id="@+id/gridColors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="6"
+        android:alignmentMode="alignBounds"
+        android:useDefaultMargins="false" />
+
+</LinearLayout>
